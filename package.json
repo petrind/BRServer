@@ -1,0 +1,31 @@
+{
+  "name": "bukareview-server",
+  "version": "1.0.0",
+  "description": "Server for BukaReview App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "bukareview",
+    "bukalapak",
+    "review",
+    "store",
+    "shop",
+    "marketplace"
+  ],
+  "author": "Petrus Fajar Subekti",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "memory-cache": "^0.1.6",
+    "mongoose": "^4.9.7",
+    "promise": "^7.1.1",
+    "request": "^2.81.0"
+  }
+}
