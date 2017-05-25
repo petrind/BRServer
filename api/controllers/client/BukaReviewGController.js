@@ -3,13 +3,13 @@
 
 var mongoose = require('mongoose'),
     BukaReviewG = mongoose.model('BukaReviewGs');
-var bukalapakApiService = require('../../services/GoogleApiService');
+var googleApiService = require('../../services/GoogleApiService');
 
 exports.getReviewG = function(req, res) {
     return getReviewGFromGoogle();
 
     function getReviewGFromGoogle() {
-        return bukalapakApiService.getSearchGoogleApi(req.query.keyword, callbackReviewGoogle);
+        return googleApiService.getSearchGoogleApi(req.query, callbackReviewGoogle);
     }
 
     function callbackReviewGoogle(data) {

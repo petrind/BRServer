@@ -10,7 +10,7 @@ exports.getSearch = function(req, res) {
     return getSearchFromBukalapak();
 
     function getSearchFromBukalapak() {
-        return bukalapakApiService.getSearchBukalapak(req.query.keyword, callbackSearch);
+        return bukalapakApiService.getSearchBukalapak(req.query, callbackSearch);
     }
 
     function callbackSearch(data) {
@@ -32,7 +32,7 @@ exports.getPopularSearch = function(req, res) {
     return getPopularSearchFromDb();
 
     function getPopularSearchFromDb() {
-        return bukalapakApiService.getSearchBukalapak(req.query.keyword, callbackPopularSearch);
+        return bukalapakApiService.getSearchBukalapak(req.query, callbackPopularSearch);
     }
 
     function callbackPopularSearch(data) {
@@ -54,7 +54,7 @@ exports.getPromoSearch = function(req, res) {
     return getPromoSearchFromBukalapak();
 
     function getPromoSearchFromBukalapak() {
-        return bukalapakApiService.getPromoSearchBukalapak(callbackPromoSearch);
+        return bukalapakApiService.getPromoSearchBukalapak(req.query, callbackPromoSearch);
     }
 
     function callbackPromoSearch(data) {

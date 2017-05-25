@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var BukaItemhSchema = new Schema({
+var BukaItemSchema = new Schema({
   bukaItemName: {
     type: String,
     Required: 'Kindly enter the name of the task'
@@ -20,4 +20,4 @@ var BukaItemhSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('BukaItems', BukaItemhSchema);
+module.exports = mongoose.model('BukaItems', BukaItemSchema);

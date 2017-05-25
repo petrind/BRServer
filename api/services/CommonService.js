@@ -2,14 +2,21 @@
 
 var request = require('request');
 var Promise = require('promise');
-var config = require('../Config');
+var config = require('../Config.json');
+
+exports.preprocessKeywordReview = function (keyword) {
+    if(typeof(keyword) === "string") {
+        keyword = keyword.trim().replace(" ", "+");
+        if (keyword.toLowerCase().indexOf("review") === -1){
+            keyword = "review+of+" + keyword;
+        }
+    }
+    return keyword;
+}
 
 exports.preprocessKeyword = function (keyword) {
     if(typeof(keyword) === "string") {
         keyword = keyword.replace(" ", "+");
-        if (keyword.toLowerCase().indexOf("review") != -1){
-            keyword = "review+of+" + keyword;
-        }
     }
     return keyword;
 }

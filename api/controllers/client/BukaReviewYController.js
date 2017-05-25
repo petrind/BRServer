@@ -3,13 +3,13 @@
 
 var mongoose = require('mongoose'),
   BukaReviewY = mongoose.model('BukaReviewYs');
-var bukalapakApiService = require('../../services/YoutubeApiService');
+var googleApiService = require('../../services/YoutubeApiService');
 
 exports.getReviewY = function(req, res) {
     return getReviewYFromYoutube();
 
     function getReviewYFromYoutube() {
-        return bukalapakApiService.getSearchYoutubeApi(req.query.keyword, callbackReviewYoutube);
+        return googleApiService.getSearchYoutubeApi(req.query, callbackReviewYoutube);
     }
     function callbackReviewYoutube(data) {
         res.json(JSON.parse(data));
