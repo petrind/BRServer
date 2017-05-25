@@ -1,10 +1,10 @@
 'use strict';
 
-
 var mongoose = require('mongoose'),
     BukaSearch = mongoose.model('BukaSearchs');
-var bukalapakApiService = require('../../services/BukalapakApiService');
 var Promise = require('promise');
+var bukalapakApiService = require('../../services/BukalapakApiService');
+var CommonService = require('./CommonService');
 
 exports.getSearch = function(req, res) {
     return getSearchFromBukalapak();

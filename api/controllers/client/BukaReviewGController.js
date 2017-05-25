@@ -4,6 +4,7 @@
 var mongoose = require('mongoose'),
     BukaReviewG = mongoose.model('BukaReviewGs');
 var googleApiService = require('../../services/GoogleApiService');
+var CommonService = require('./CommonService');
 
 exports.getReviewG = function(req, res) {
     return getReviewGFromGoogle();

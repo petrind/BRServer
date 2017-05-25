@@ -40,3 +40,12 @@ exports.processHeaderRequestBukalapak = function (urlAddress) {
         }
     }
 }
+
+exports.tokenValidation = function (req, res) {
+    if (re.headers.BRToken ===config['BRToken']) {
+        return true;
+    }
+    res.json({error: "Invalid Token"});
+    res.send();
+    return false;
+}

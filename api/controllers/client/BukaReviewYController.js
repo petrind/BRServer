@@ -2,8 +2,9 @@
 
 
 var mongoose = require('mongoose'),
-  BukaReviewY = mongoose.model('BukaReviewYs');
+    BukaReviewY = mongoose.model('BukaReviewYs');
 var googleApiService = require('../../services/YoutubeApiService');
+var CommonService = require('./CommonService');
 
 exports.getReviewY = function(req, res) {
     return getReviewYFromYoutube();
