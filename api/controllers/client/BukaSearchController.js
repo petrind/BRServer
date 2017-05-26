@@ -7,6 +7,9 @@ var bukalapakApiService = require('../../services/BukalapakApiService');
 var CommonService = require('./CommonService');
 
 exports.getSearch = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getSearchFromBukalapak();
 
     function getSearchFromBukalapak() {
@@ -29,6 +32,9 @@ exports.getSearch = function(req, res) {
 };
 
 exports.getPopularSearch = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getPopularSearchFromDb();
 
     function getPopularSearchFromDb() {
@@ -51,6 +57,9 @@ exports.getPopularSearch = function(req, res) {
 }
 
 exports.getPromoSearch = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getPromoSearchFromBukalapak();
 
     function getPromoSearchFromBukalapak() {

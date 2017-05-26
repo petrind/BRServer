@@ -8,6 +8,9 @@ var bukalapakApiService = require('../../services/BukalapakApiService');
 var CommonService = require('./CommonService');
 
 exports.getBukaItem = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getBukaItemFromBukalapak();
 
     function getBukaItemFromBukalapak() {
@@ -30,6 +33,9 @@ exports.getBukaItem = function(req, res) {
 };
 
 exports.getBukaItemReviewFromBukalapak = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getBukaItemReviewBukalapak();
 
     function getBukaItemReviewBukalapak() {

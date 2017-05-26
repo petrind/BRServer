@@ -7,6 +7,9 @@ var googleApiService = require('../../services/GoogleApiService');
 var CommonService = require('./CommonService');
 
 exports.getReviewG = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getReviewGFromGoogle();
 
     function getReviewGFromGoogle() {

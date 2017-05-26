@@ -6,12 +6,15 @@ var mongoose = require('mongoose'),
 var CommonService = require('./CommonService');
 
 exports.postSaveBukaBuy = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return saveBukaBuy();
 
     function saveBukaBuy() {
         var new_BukaBuy = new BukaBuy(req.body);
         new_BukaBuy.save(function(err, bukaReviewG) {
-            if (err){
+            if (err) {
                 console.log(err);
                 return;
             }

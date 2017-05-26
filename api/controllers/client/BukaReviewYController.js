@@ -7,6 +7,9 @@ var googleApiService = require('../../services/YoutubeApiService');
 var CommonService = require('./CommonService');
 
 exports.getReviewY = function(req, res) {
+    if (!CommonService.tokenValidation(req, res)) {
+            return;
+    }
     return getReviewYFromYoutube();
 
     function getReviewYFromYoutube() {
