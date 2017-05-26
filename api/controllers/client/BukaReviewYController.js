@@ -4,7 +4,7 @@
 var mongoose = require('mongoose'),
     BukaReviewY = mongoose.model('BukaReviewYs');
 var googleApiService = require('../../services/YoutubeApiService');
-var CommonService = require('../../../services/CommonService');
+var CommonService = require('../../services/CommonService');
 
 exports.getReviewY = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {

@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
     BukaItem = mongoose.model('BukaItems');
 var Promise = require('promise');
 var bukalapakApiService = require('../../services/BukalapakApiService');
-var CommonService = require('./CommonService');
+var CommonService = require('../../services/CommonService');
 
 exports.getBukaItem = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {

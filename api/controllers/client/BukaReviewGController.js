@@ -4,7 +4,7 @@
 var mongoose = require('mongoose'),
     BukaReviewG = mongoose.model('BukaReviewGs');
 var googleApiService = require('../../services/GoogleApiService');
-var CommonService = require('../../../services/CommonService');
+var CommonService = require('../../services/CommonService');
 
 exports.getReviewG = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {

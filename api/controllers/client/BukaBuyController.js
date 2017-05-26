@@ -3,7 +3,7 @@
 
 var mongoose = require('mongoose'),
   BukaBuy = mongoose.model('BukaBuys');
-var CommonService = require('./CommonService');
+var CommonService = require('../../services/CommonService');
 
 exports.postSaveBukaBuy = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
