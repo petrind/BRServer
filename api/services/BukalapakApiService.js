@@ -12,7 +12,8 @@ exports.getSearchBukalapak = function (query, callback) {
         .join('&');
     request.get(CommonService.processHeaderRequestBukalapak("https://api.bukalapak.com/v2/products.json?" + querystring), function(error, response, body) { 
         if (!error && response.statusCode == 200) { 
-            callback(body); 
+            callback(body);
+            return;
         }
         console.log(error)
         callback(null);
@@ -25,7 +26,8 @@ exports.getPromoSearchBukalapak = function (query, callback) {
         .join('&');
     request.get(CommonService.processHeaderRequestBukalapak("https://api.bukalapak.com/v2/products/promo_banners.json?" + querystring), function(error, response, body) { 
         if (!error && response.statusCode == 200) { 
-            callback(body); 
+            callback(body);
+            return;
         }
         console.log(error)
         callback(null);
