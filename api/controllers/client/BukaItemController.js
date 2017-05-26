@@ -3,8 +3,9 @@
 
 var mongoose = require('mongoose'),
     BukaItem = mongoose.model('BukaItems');
-var bukalapakApiService = require('../../services/BukalapakApiService');
 var Promise = require('promise');
+var bukalapakApiService = require('../../services/BukalapakApiService');
+var CommonService = require('./CommonService');
 
 exports.getBukaItem = function(req, res) {
     return getBukaItemFromBukalapak();
