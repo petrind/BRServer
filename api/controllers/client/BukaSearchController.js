@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     BukaSearch = mongoose.model('BukaSearchs');
 var Promise = require('promise');
 var bukalapakApiService = require('../../services/BukalapakApiService');
-var CommonService = require('./CommonService');
+var CommonService = require('../../../services/CommonService');
 
 exports.getSearch = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
