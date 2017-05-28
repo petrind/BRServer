@@ -18,7 +18,7 @@ var BukaReviewYSchema = new Schema({
         default: Date.now
     },
     additionalInfo: {
-    type: String
+    type: Schema.Types.Mixed
   }
 });
 

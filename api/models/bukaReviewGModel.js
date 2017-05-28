@@ -6,7 +6,6 @@ var Schema = mongoose.Schema;
 var BukaReviewGSchema = new Schema({
     bukaSearch: {
         type: String,
-        Required: 'ItemId'
     },
     GTitle : {
         type: String
@@ -19,7 +18,7 @@ var BukaReviewGSchema = new Schema({
         default: Date.now
     },
     additionalInfo: {
-    type: String
+    type: Schema.Types.Mixed
   }
 });
 
