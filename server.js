@@ -17,7 +17,7 @@ mongoose.connect(Env.production.mongo);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./api/routes/bukaReviewAppRoutes');
+var routes = require('./api/routes/BukaReviewAppRoutes');
 routes(app);
 
 app.listen(port);
