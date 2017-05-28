@@ -43,7 +43,7 @@ exports.getBukaItemReviewFromBukalapak = function(req, res) {
         res.send();
         
         var saveData = {
-            bukaSearch : req.query.bukaSearch,
+            bukaSearch : req.query.bukaSearch || req.query.bukasearch ,
             aditionalInfo: "blreview" //means open on review from bukalapak
         }
         var new_BukaItem = new BukaItem (saveData);
