@@ -4,6 +4,9 @@ var Schema = mongoose.Schema;
 
 
 var BukaItemSchema = new Schema({
+  bukaItemId: {
+    type: String,
+  },
   bukaSearch: {
     type: String,
   },
