@@ -6,7 +6,7 @@ var config = require('../Config.json');
 var CommonService = require('./CommonService');
 
 exports.getSearchGoogleApi = function (query, callback) {
-    query.keyword = CommonService.preprocessKeywordReview(query.keyword);
+    query.keyword = CommonService.preprocessKeywordReview(query.keywords);
     request.get({ url:  "https://www.googleapis.com/customsearch/v1?key=" 
     + config['ApiKey'] 
     + "&cx=" + config['SearchEngineId'] 
