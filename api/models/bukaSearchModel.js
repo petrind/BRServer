@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var BukaSearchSchema = new Schema({
   searchQuery: {
-    type: String,
+    type: Schema.Types.Mixed,
     Required: 'Search query'
   },
   Created_date: {
@@ -13,7 +13,7 @@ var BukaSearchSchema = new Schema({
     default: Date.now
   },
   additionalInfo: {
-    type: String
+    type: Schema.Types.Mixed
   }
 });
 

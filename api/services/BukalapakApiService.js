@@ -20,6 +20,9 @@ exports.getSearchBukalapak = function (query, callback) {
     });
 }
 
+/**
+ * Pending, will be worked after app v0.1
+ */
 exports.getPromoSearchBukalapak = function (query, callback) {
     var querystring = Object.keys(query)
         .map(key => key + '=' + encodeURIComponent(query[key]))
@@ -34,6 +37,9 @@ exports.getPromoSearchBukalapak = function (query, callback) {
     });
 }
 
+/**
+ * Deprecated, because whole item info can be gotten using getSearchBukalapak
+ */
 exports.getItemBukalapak = function (itemId, query, callback) {
     var querystring = Object.keys(query)
         .map(key => key + '=' + encodeURIComponent(query[key]))

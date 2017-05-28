@@ -6,6 +6,9 @@ var mongoose = require('mongoose'),
 var googleApiService = require('../../services/GoogleApiService');
 var CommonService = require('../../services/CommonService');
 
+/**
+ * Get review from google
+ */
 exports.getReviewG = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -19,14 +22,7 @@ exports.getReviewG = function(req, res) {
     function callbackReviewGoogle(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaReviewG = new BukaReviewG(req.body);
-        new_BukaReviewG.save(function(err, bukaReviewG) {
-            if (err){
-                console.log(err);
-                return;
-            }
-        });
     }
 };
+
+//TODO make method to save what google review  click by user

@@ -4,19 +4,15 @@ var Schema = mongoose.Schema;
 
 
 var BukaItemSchema = new Schema({
-  bukaItemName: {
+  bukaSearch: {
     type: String,
-    Required: 'Kindly enter the name of the task'
-  },
-  bukaSearchId : {
-    type: String
   },
   Created_date: {
     type: Date,
     default: Date.now
   },
   additionalInfo: {
-    type: String
+    type: Schema.Types.Mixed
   }
 });
 

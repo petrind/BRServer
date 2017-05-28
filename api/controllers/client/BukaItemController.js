@@ -7,6 +7,9 @@ var Promise = require('promise');
 var bukalapakApiService = require('../../services/BukalapakApiService');
 var CommonService = require('../../services/CommonService');
 
+/**
+ * DEPRECATED, whole needed item info can be gotten in product search
+ */
 exports.getBukaItem = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -20,18 +23,11 @@ exports.getBukaItem = function(req, res) {
     function callbackBukaItemGet(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaItem = new BukaItem(req.body);
-        new_BukaItem.save(function(err, bukaItem) {
-            if (err){
-                console.log(err);
-                return;
-            }
-        });
     }
 };
-
+/**
+ * Get and savedata of item review viewed by user
+ */
 exports.getBukaItemReviewFromBukalapak = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -45,9 +41,12 @@ exports.getBukaItemReviewFromBukalapak = function(req, res) {
     function callbackBukaItemGet(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaItem = new BukaItem (req.body);
+        
+        var saveData = {
+            bukaSearch : req.query.bukaSearch,
+            aditionalInfo: "blreview" //means open on review from bukalapak
+        }
+        var new_BukaItem = new BukaItem (saveData);
         new_BukaItem.save(function(err, bukaSearch) {
             if (err){
                 console.log(err);

@@ -6,6 +6,9 @@ var Promise = require('promise');
 var bukalapakApiService = require('../../services/BukalapakApiService');
 var CommonService = require('../../services/CommonService');
 
+/**
+ * Get search query from user at first screen
+ */
 exports.getSearch = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -19,9 +22,9 @@ exports.getSearch = function(req, res) {
     function callbackSearch(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaSearch = new BukaSearch(req.body);
+
+        var saveData = {searchQuery: req.query, additionalInfo: "search"};
+        var new_BukaSearch = new BukaSearch(saveData);
         new_BukaSearch.save(function(err, bukaSearch) {
             if (err){
                 console.log(err);
@@ -31,6 +34,9 @@ exports.getSearch = function(req, res) {
     }
 };
 
+/**
+ * Get and save Popular search based on db of bukareview
+ */
 exports.getPopularSearch = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -44,9 +50,9 @@ exports.getPopularSearch = function(req, res) {
     function callbackPopularSearch(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaSearch = new BukaSearch(req.body);
+        
+        var saveData = {searchQuery: req.query, additionalInfo: "popular"}
+        var new_BukaSearch = new BukaSearch(saveData);
         new_BukaSearch.save(function(err, bukaSearch) {
             if (err){
                 console.log(err);
@@ -56,6 +62,9 @@ exports.getPopularSearch = function(req, res) {
     }
 }
 
+/**
+ * get and save promo based on BL
+ */
 exports.getPromoSearch = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -69,9 +78,8 @@ exports.getPromoSearch = function(req, res) {
     function callbackPromoSearch(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaSearch = new BukaSearch(req.body);
+
+        var new_BukaSearch = new BukaSearch({searchQuery: req.query, additionalInfo: "promo"});
         new_BukaSearch.save(function(err, bukaSearch) {
             if (err){
                 console.log(err);

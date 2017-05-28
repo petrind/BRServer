@@ -6,16 +6,14 @@ var Schema = mongoose.Schema;
 var BukaBuySchema = new Schema({
   bukaBuyName: {
     type: String,
-    Required: 'Kindly enter the name of the task'
   },
   bukaLapakUrl: {
     type: String,
-    Required: 'Kindly enter the name of the task'
   },
   parent: {
     type: [{
       type: String,
-      enum: ['bukaItem', 'bukaReview']
+      enum: ['bukaItem', 'bukaReview', 'bukaReviewG', 'bukaReviewY']
     }],
     default: ['bukaItem']
   },

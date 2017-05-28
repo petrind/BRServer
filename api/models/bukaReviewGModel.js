@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var BukaReviewGSchema = new Schema({
-    bukaItemId: {
+    bukaSearch: {
         type: String,
         Required: 'ItemId'
     },

@@ -4,9 +4,8 @@ var Schema = mongoose.Schema;
 
 
 var BukaReviewYSchema = new Schema({
-    bukaItemId: {
+    bukaSearch: {
         type: String,
-        Required: 'ItemId'
     },
     YTitle : {
         type: String

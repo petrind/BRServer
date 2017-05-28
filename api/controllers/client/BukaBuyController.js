@@ -12,6 +12,7 @@ exports.postSaveBukaBuy = function(req, res) {
     return saveBukaBuy();
 
     function saveBukaBuy() {
+        var saveData = req.body;
         var new_BukaBuy = new BukaBuy(req.body);
         new_BukaBuy.save(function(err, bukaReviewG) {
             if (err) {

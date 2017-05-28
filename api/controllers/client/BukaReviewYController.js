@@ -6,6 +6,9 @@ var mongoose = require('mongoose'),
 var googleApiService = require('../../services/YoutubeApiService');
 var CommonService = require('../../services/CommonService');
 
+/**
+ * Get review from youtube
+ */
 exports.getReviewY = function(req, res) {
     if (!CommonService.tokenValidation(req, res)) {
             return;
@@ -18,14 +21,7 @@ exports.getReviewY = function(req, res) {
     function callbackReviewYoutube(data) {
         res.json(JSON.parse(data));
         res.send();
-        //TODO build data for BukaSearch
-        //save data
-        var new_BukaReviewY = new BukaReviewY(req.body);
-        new_BukaReviewY.save(function(err, bukaReviewG) {
-            if (err){
-                console.log(err);
-                return;
-            }
-        });
     }
 };
+
+//TODO make method to save what youtube video click by user
