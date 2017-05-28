@@ -7,10 +7,11 @@ var express = require('express'),
   BukaReviewY = require('./api/models/bukaReviewYModel'),
   BukaReviewG = require('./api/models/bukaReviewGModel'),
   BukaItem = require('./api/models/bukaItemModel'),
+  Env = require('./api/Env.json'),
   bodyParser = require('body-parser');
   
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/BukaReview'); 
+mongoose.connect(Env.production.mongo); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
